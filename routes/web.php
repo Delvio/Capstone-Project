@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia; // We are going to use this class to render React components
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// This is the default route that comes with Laravel
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// This is the route that will render our React component
 Route::get('/', function () {
-    return view('welcome');
+    return Inertia::render('Home'); // This will get component Test.jsx from the resources/js/Pages/Test.jsx
 });
