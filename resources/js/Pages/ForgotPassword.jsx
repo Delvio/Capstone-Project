@@ -1,11 +1,14 @@
 import React from "react";
 import ForgotPasswordForm from "../Components/ForgotPasswordForm";
+import NavBar from "../Components/NavBar";
+import Footer from "../Components/Footer";
 
 function ForgotPassword() {
     return (
-        <div>
-            <h1>Forgot Password</h1>
+        <div className="flex flex-col h-screen">
+            <NavBar></NavBar>
             <ForgotPasswordForm />
+            <Footer></Footer>
         </div>
     );
 }
