@@ -28,7 +28,7 @@ class UserController extends Controller
             $user = User::create($data);
             auth()->login($user);
 
-            return Inertia::location('/dashboard');
+            return Inertia::location('/tasklist');
         }
     }
 
@@ -44,7 +44,7 @@ class UserController extends Controller
 
             if (Auth::attempt(["email" => $data["email"], "password" => $data["password"]])) {
                 $request->session()->regenerate();
-                return Inertia::location("/dashboard");
+                return Inertia::location("/tasklist");
             } else {
                 Inertia::location("/login");
             }
